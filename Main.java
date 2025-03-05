@@ -27,5 +27,18 @@ public class Main {
             }
         }
 
+        Professor prof1 = new Professor(p4.id, cs.id);
+        Professor prof2 = new Professor(p3.id, math.id);
+
+        System.out.println("\nProfessors List:");
+        for (Professor prof : Professor.professorList) {
+            Person person = Person.findByID(prof.personID);
+            if (person != null) {
+                System.out.println("Professor ID: " + prof.id + ", Name: " + person.name);
+            } else {
+                System.out.println("Professor ID: " + prof.id + " -> Person not found!");
+            }
+        }
+
     }
 }
