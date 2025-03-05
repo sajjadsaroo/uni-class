@@ -71,5 +71,26 @@ public class Main {
             }
         }
 
+        Transcript t1 = new Transcript(s1.id);
+        t1.setGrade(pc1.id, 18.5);
+        t1.setGrade(pc2.id, 17.0);
+
+        Transcript t2 = new Transcript(s2.id);
+        t2.setGrade(pc1.id, 16.5);
+        t2.setGrade(pc2.id, 20);
+
+        Transcript t3 = new Transcript(s3.id);
+        t3.setGrade(pc2.id, 19.0);
+        t3.setGrade(pc3.id, 18.0);
+
+        System.out.println("\nTranscripts:");
+        t1.printTranscript();
+        t2.printTranscript();
+        t3.printTranscript();
+
+        System.out.println("\nGPAs:");
+        System.out.println("Student " + s1.id + " GPA: " + t1.getGPA());
+        System.out.println("Student " + s2.id + " GPA: " + t2.getGPA());
+        System.out.println("Student " + s3.id + " GPA: " + t3.getGPA());
     }
 }
