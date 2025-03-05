@@ -28,5 +28,12 @@ public class PresentedCourse {
         return null;
     }
 
+    public void addStudent(int studentID) {
+        if(!(studentIds.size() >= capacity)) {
+            studentIds.add(studentID);
+        } else {
+            System.out.println("Student ID capacity exceeded");
+        }
+    }
 
 }
