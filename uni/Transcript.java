@@ -30,5 +30,12 @@ public class Transcript {
 
     }
 
-
+    public double getGPA() {
+        if (transcript.isEmpty()) return 0.0;
+        double total = 0;
+        for (double grade : transcript.values()) {
+            total += grade;
+        }
+        return total / transcript.size();
+    }
 }
