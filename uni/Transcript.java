@@ -16,4 +16,19 @@ public class Transcript {
         transcript.put(presentedCourseID, grade);
     }
 
+    public void printTranscript() {
+
+        if(Person.findByID(studentID) != null && Student.findById(studentID) != null) {
+            System.out.println("Transcript for Student name: " + Person.findByID(studentID).name + " StudentId: " + Student.findById(studentID).studentID);
+            for (Integer courseID : transcript.keySet()) {
+                if(Course.findById(courseID) != null){
+                    System.out.println(" Course Name: " + Course.findById(courseID).title + "- Course ID: " + courseID + " - Grade: " + transcript.get(courseID));
+                }
+            }
+            System.out.println();
+        }
+
+    }
+
+
 }
