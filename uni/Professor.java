@@ -16,11 +16,14 @@ public class Professor {
     }
 
     public static Professor findById(int id) {
-        for (Professor p : professorList) {
-            if (p.id == id) {
-                return p;
+
+        for (Professor prof : professorList) {
+
+            if (prof.id == id) {
+                return prof;
             }
         }
+
         return null;
     }
 }

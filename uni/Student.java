@@ -36,8 +36,10 @@ public class Student {
 
     public void setStudentCode() {
         if (Major.findById(this.majorID) != null) {
+
             Major major = Major.findById(this.majorID);
             String majorZero = "" + majorID, personIdZero = "" + personId;
+
             if (majorID < 10)
                 majorZero = "0" + majorID;
             if (personId < 10)
