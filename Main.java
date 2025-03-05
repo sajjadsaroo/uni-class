@@ -40,5 +40,36 @@ public class Main {
             }
         }
 
+        Course course1 = new Course("Programming", 3);
+        Course course2 = new Course("Calculus", 4);
+        Course course3 = new Course("Algorithms", 3);
+
+        PresentedCourse pc1 = new PresentedCourse(course1.id, prof1.id, 30);
+        PresentedCourse pc2 = new PresentedCourse(course2.id, prof1.id, 25);
+        PresentedCourse pc3 = new PresentedCourse(course3.id, prof2.id, 20);
+
+        pc1.addStudent(s1.id);
+        pc1.addStudent(s2.id);
+
+        pc2.addStudent(s1.id);
+        pc2.addStudent(s2.id);
+        pc2.addStudent(s3.id);
+
+        pc3.addStudent(s3.id);
+
+        System.out.println("\nRegistered Students for Courses:");
+        for (PresentedCourse pc : PresentedCourse.presentedCourseList) {
+            Course course = Course.findById(pc.courseID);
+            String courseTitle = (course != null ? course.title : "Unknown Course");
+            System.out.println("Course: " + courseTitle);
+            for (int studentId : pc.studentIds) {
+                Student st = Student.findById(studentId);
+                if (st != null) {
+                    Person studentPerson = Person.findByID(st.personId);
+                    System.out.println("  - " + (studentPerson != null ? studentPerson.name : "Unknown Student"));
+                }
+            }
+        }
+
     }
 }
