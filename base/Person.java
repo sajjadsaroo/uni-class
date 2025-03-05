@@ -15,5 +15,14 @@ public class Person {
         personList.add(this);
     }
 
+    public static Person findByID(int id) {
+        for (Person p : personList) {
+            if (p.id == id) {
+                return p;
+            }
+        }
+        return null;
+    }
+
 
 }
